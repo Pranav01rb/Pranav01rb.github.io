@@ -7,137 +7,144 @@
   <meta name="description" content="Robotics & Autonomous Systems engineer specializing in AV perception, sensor fusion, and end-to-end pipelines." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg: #0b0c10; --card:#111319; --text:#e6e8ee; --muted:#a7b0c0; --accent:#7cc4ff; --line:#1b1f2a;
+      --bg: #0b0c10; --panel:#0f1117; --card:#111319; --text:#e6e8ee; --muted:#a7b0c0; --accent:#528bff; --line:#1b1f2a;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
     }
     @media (prefers-color-scheme: light){
-      :root{ --bg:#f7f8fb; --card:#ffffff; --text:#0f172a; --muted:#475569; --accent:#066aff; --line:#e6e8ee; }
+      :root{ --bg:#f7f8fb; --panel:#ffffff; --card:#ffffff; --text:#0f172a; --muted:#475569; --accent:#1f6fff; --line:#e6e8ee; }
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
-    .container{max-width:1000px;margin:0 auto;padding:28px}
-    header{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
-    nav a{margin-left:18px;font-weight:600}
-    header strong{font-size:1.8rem;font-weight:700;}
-    .hero{margin:56px 0;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
-    .card{background:var(--card); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow);}
-    .pad{padding:28px}
-    .title{font-size:40px;line-height:1.1;margin:0 0 12px}
-    .subtitle{color:var(--muted);font-size:18px;margin:0}
-    .btns{margin-top:22px; display:flex; gap:12px; flex-wrap:wrap}
-    .btn{display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);font-weight:600}
-    .btn.primary{background:var(--accent);color:white;border-color:transparent}
-    section{margin:40px 0}
-    h2{font-size:24px;margin:0 0 16px}
+
+    /* Layout */
+    .wrap{display:grid;grid-template-columns:320px 1fr;gap:28px;max-width:1200px;margin:0 auto;padding:28px}
+    @media (max-width:960px){ .wrap{grid-template-columns:1fr} .sticky{position:static} }
+
+    .sticky{position:sticky;top:24px;align-self:start}
+    .panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:24px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);}
+    .pad{padding:24px}
+
+    /* Sidebar */
+    .avatar{width:220px;height:220px;border-radius:18px;object-fit:cover;border:4px solid var(--line);box-shadow:var(--shadow)}
+    .name{font-size:32px;font-weight:800;line-height:1.1;margin:18px 0 6px}
+    .tag{color:var(--muted);margin:0 0 16px}
+    .nav a{display:block;padding:10px 12px;border-radius:10px;font-weight:600;margin:6px 0;border:1px solid var(--line);background:transparent}
+    .nav a:hover{background:rgba(127,127,127,.08)}
+    .links a{margin-right:12px}
+
+    /* Main */
+    section{margin:0 0 24px}
+    h2{font-size:22px;margin:0 0 12px}
+    .lead{font-size:18px;color:var(--muted)}
     ul{list-style:none;margin:0;padding:0}
-    li+li{margin-top:10px}
+    li+li{margin-top:8px}
     .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .grid .card{height:100%}
+    @media (max-width:960px){ .grid{grid-template-columns:1fr} }
     .meta{color:var(--muted);font-size:14px}
     .badge{display:inline-block;padding:6px 10px;border:1px solid var(--line);border-radius:999px;margin:4px 6px 0 0;font-size:12px;color:var(--muted)}
-    footer{margin:64px 0 32px;color:var(--muted);font-size:14px;text-align:center}
-    @media (max-width:880px){ .hero{grid-template-columns:1fr} .grid{grid-template-columns:1fr} }
-    .anchor{scroll-margin-top:90px}
+    footer{margin:28px 0;color:var(--muted);font-size:14px;text-align:center}
+    .anchor{scroll-margin-top:80px}
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div>
-        <strong>Pranav Ramesh Bidare</strong><br/>
-        <span class="meta">Robotics & Autonomous Systems</span>
+  <div class="wrap">
+    <!-- LEFT SIDEBAR -->
+    <aside class="panel sticky">
+      <div style="display:flex;justify-content:center">
+        <img src="headshot.jpg" alt="Pranav Ramesh Bidare" class="avatar">
       </div>
-      <nav>
+      <div class="name">Pranav Ramesh Bidare</div>
+      <p class="tag">Robotics & Autonomous Systems • AV Perception, Sensor Fusion</p>
+      <div class="links">
+        <a href="mailto:pranavramesh01@gmail.com">Email</a>
+        <a href="tel:+16237591975">Call</a>
+        <a href="https://www.linkedin.com/in/pranav-ramesh-bidare" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+      </div>
+      <hr style="border:none;border-top:1px solid var(--line);margin:18px 0">
+      <nav class="nav">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#publications">Publications</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
-    </header>
+    </aside>
 
-    <section class="hero">
-      <div class="card pad">
-        <h1 class="title">Pranav Ramesh Bidare</h1>
-        <p class="subtitle">AV Perception • Sensor Fusion • LiDAR–camera 3D object detection • V2I perception • Semantic segmentation • Multi-sensor Calibration</p>
-        <div class="btns">
-          <a class="btn primary" href="#projects">View Projects</a>
-          <a class="btn" href="#contact">Get in touch</a>
-          <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume</a>
-        </div>
-      </div>
-      <div class="card pad">
-        <h2 id="about" class="anchor">About</h2>
+    <!-- MAIN CONTENT -->
+    <main>
+      <section id="about" class="card pad anchor">
+        <h2>About</h2>
         <p>
-          I am a passionate Robotics and Autonomous Systems Engineer specializing in autonomous vehicle perception and sensor fusion pipelines. I have hands-on experience in the design and deployment of end-to-end perception pipelines integrating 3D object detection, multi-sensor fusion, and semantic segmentation using frameworks such as ROS2, Autoware, and CARLA. 
-          I am seeking Perception Engineer, Sensor Fusion Engineer, or Machine Learning Engineer roles in the autonomous vehicle or robotics industry, where I can design, optimize, and deploy scalable, real-time perception systems that bridge research and production
-
+          I build end‑to‑end perception pipelines for autonomous systems, specializing in LiDAR–camera fusion,
+          3D object detection, V2I perception, semantic segmentation, and calibration. My master’s thesis at ASU’s BELIV Lab
+          delivered a 3D LiDAR–camera late‑fusion stack with a dual‑update Kalman filter that extended perception range by 252% (21.6→76m),
+          validated through real‑world testing on our research vehicle.
         </p>
-      </div>
-    </section>
+      </section>
 
-    <section id="projects" class="anchor">
-      <h2>Projects</h2>
-      <div class="grid">
-        <article class="card pad">
-          <h3>3D LiDAR–Camera Fusion for Extended V2I Perception</h3>
-          <p class="meta">ROS 2 • Autoware • Kalman Filter • CARLA/ScenarioRunner</p>
-          <ul>
-            <li>Late-fusion of onboard LiDAR with RSU camera streams for occlusion-aware 3D detection and tracking.</li>
-            <li>Dual-update Kalman filter for asynchronous fusion; achieved 0.51 m RMSE and 252% range extension.</li>
-            <li>Validated in CARLA and on-vehicle; measured latency/FPS and robustness under varied conditions.</li>
-          </ul>
-        </article>
-        <article class="card pad">
-          <h3>Autoware + Autoseg Semantic Segmentation (Industry Collaboration)</h3>
-          <p class="meta">ROS 2 • Autoware • Semantic Segmentation • On-vehicle bring-up</p>
-          <ul>
-            <li>Integrated Autoseg into the Autoware perception stack to enhance real-time scene understanding.</li>
-            <li>Deployed on the lab vehicle; benchmarking 3D mAP, segmentation IoU, and end-to-end latency.</li>
-          </ul>
-        </article>
-        <article class="card pad">
-          <h3>Camera–LiDAR Calibration for 360° Surround Perception</h3>
-          <p class="meta">AprilTag PnP • SQPnP • Autoware ROS 2</p>
-          <ul>
-            <li>Upgraded platform to 6 cameras + 2 LiDAR; executed intrinsic/extrinsic calibration for precise fusion.</li>
-            <li>Integrated calibration outputs into Autoware; improved spatial alignment and detection stability.</li>
-          </ul>
-        </article>
-        <article class="card pad">
-          <h3>Traffic Light & Sign Detection in Adverse Conditions</h3>
-          <p class="meta">YOLOv11n • LISA + CARLA augmentation</p>
-          <ul>
-            <li>Robust detector trained with motion-blur, fog, rain, and occlusion augmentations.</li>
-            <li>Achieved 89.3% mAP@50 on LISA; 78.1% mAP@50 on augmented tests.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+      <section id="projects" class="anchor">
+        <div class="card pad">
+          <h2>Projects</h2>
+          <div class="grid">
+            <article class="card pad">
+              <h3>3D LiDAR–Camera Fusion for Extended V2I Perception</h3>
+              <p class="meta">ROS 2 • Autoware • Kalman Filter • CARLA/ScenarioRunner</p>
+              <ul>
+                <li>Late‑fusion of onboard LiDAR with RSU camera streams for occlusion‑aware 3D detection and tracking.</li>
+                <li>Dual‑update Kalman filter for asynchronous fusion; achieved 0.51 m RMSE and 252% range extension.</li>
+                <li>Validated in CARLA and on‑vehicle; measured latency/FPS and robustness under varied conditions.</li>
+              </ul>
+            </article>
+            <article class="card pad">
+              <h3>Autoware + Autoseg Semantic Segmentation (Industry Collaboration)</h3>
+              <p class="meta">ROS 2 • Autoware • Semantic Segmentation • On‑vehicle bring‑up</p>
+              <ul>
+                <li>Integrated Autoseg into the Autoware perception stack to enhance real‑time scene understanding.</li>
+                <li>Deployed on the lab vehicle; benchmarking 3D mAP, segmentation IoU, and end‑to‑end latency.</li>
+              </ul>
+            </article>
+            <article class="card pad">
+              <h3>Camera–LiDAR Calibration for 360° Surround Perception</h3>
+              <p class="meta">AprilTag PnP • SQPnP • Autoware ROS 2</p>
+              <ul>
+                <li>Upgraded platform to 6 cameras + 2 LiDAR; executed intrinsic/extrinsic calibration for precise fusion.</li>
+                <li>Integrated calibration outputs into Autoware; improved spatial alignment and detection stability.</li>
+              </ul>
+            </article>
+            <article class="card pad">
+              <h3>Traffic Light & Sign Detection in Adverse Conditions</h3>
+              <p class="meta">YOLOv11n • LISA + CARLA augmentation</p>
+              <ul>
+                <li>Robust detector trained with motion‑blur, fog, rain, and occlusion augmentations.</li>
+                <li>Achieved 89.3% mAP@50 on LISA; 78.1% mAP@50 on augmented tests.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    <section id="publications" class="anchor">
-      <h2>Publications (Selected)</h2>
-      <div class="card pad">
+      <section id="publications" class="card pad anchor">
+        <h2>Publications (Selected)</h2>
         <ul>
           <li>Optimizing Perception Capabilities of Autonomous Vehicles Through V2I Late Fusion using Kalman Filter — MECC 2025</li>
           <li>Upgrading an Automated Vehicle Research Platform for Enhanced Perception and Distributed Computing — IFAC IAV 2025</li>
-          <li>Trustworthy Conceptual Explanations for Neural Networks in Robot Decision-Making — IROS 2025</li>
+          <li>Trustworthy Conceptual Explanations for Neural Networks in Robot Decision‑Making — IROS 2025</li>
         </ul>
-      </div>
-    </section>
+      </section>
 
-    <section id="skills" class="anchor">
-      <h2>Skills</h2>
-      <div class="card pad">
+      <section id="skills" class="card pad anchor">
+        <h2>Skills</h2>
         <div>
           <span class="badge">Python</span>
           <span class="badge">C++</span>
-          <span class="badge">ROS 2</span>
+          <span class="badge">ROS 2</span>
           <span class="badge">Autoware</span>
           <span class="badge">CARLA</span>
           <span class="badge">PyTorch</span>
@@ -149,22 +156,20 @@
           <span class="badge">Git</span>
           <span class="badge">Jira</span>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="contact" class="anchor">
-      <h2>Contact</h2>
-      <div class="card pad">
+      <section id="contact" class="card pad anchor">
+        <h2>Contact</h2>
         <p>
-          Tempe, AZ · <a href="mailto:pranavramesh01@gmail.com">pranavramesh01@gmail.com</a> · <a href="tel:+16237591975">(623) 759-1975</a>
+          Tempe, AZ · <a href="mailto:pranavramesh01@gmail.com">pranavramesh01@gmail.com</a> · <a href="tel:+16237591975">(623) 759‑1975</a>
           · <a href="https://www.linkedin.com/in/pranav-ramesh-bidare" target="_blank" rel="noopener">LinkedIn</a>
         </p>
-      </div>
-    </section>
+      </section>
 
-    <footer>
-      © <span id="year"></span> Pranav Ramesh Bidare. Built with HTML/CSS and hosted on GitHub Pages.
-    </footer>
+      <footer>
+        © <span id="year"></span> Pranav Ramesh Bidare. Built with HTML/CSS and hosted on GitHub Pages.
+      </footer>
+    </main>
   </div>
 
   <script>
