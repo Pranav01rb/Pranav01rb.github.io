@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pranav Ramesh Bidare — Portfolio</title>
-  <meta name="description" content="Robotics & Autonomous Systems engineer specializing in AV perception, sensor fusion, and end‑to‑end pipelines." />
+  <meta name="description" content="Robotics & Autonomous Systems engineer specializing in AV perception, sensor fusion, and end-to-end pipelines." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -23,6 +23,7 @@
     .container{max-width:1000px;margin:0 auto;padding:28px}
     header{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
     nav a{margin-left:18px;font-weight:600}
+    header strong{font-size:1.8rem;font-weight:700;}
     .hero{margin:56px 0;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
     .card{background:var(--card); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow);}
     .pad{padding:28px}
@@ -41,7 +42,6 @@
     .badge{display:inline-block;padding:6px 10px;border:1px solid var(--line);border-radius:999px;margin:4px 6px 0 0;font-size:12px;color:var(--muted)}
     footer{margin:64px 0 32px;color:var(--muted);font-size:14px;text-align:center}
     @media (max-width:880px){ .hero{grid-template-columns:1fr} .grid{grid-template-columns:1fr} }
-    /* Simple anchor offset for sticky nav feel */
     .anchor{scroll-margin-top:90px}
   </style>
 </head>
@@ -63,8 +63,8 @@
 
     <section class="hero">
       <div class="card pad">
-        <h1 class="title">End‑to‑End AV Perception & Sensor Fusion</h1>
-        <p class="subtitle">LiDAR–camera 3D object detection • V2I perception • Semantic segmentation • ROS 2 / Autoware • Calibration • Jetson Orin</p>
+        <h1 class="title">End-to-End AV Perception & Sensor Fusion</h1>
+        <p class="subtitle">LiDAR–camera 3D object detection • V2I perception • Semantic segmentation • ROS 2 / Autoware • Calibration • Jetson Orin</p>
         <div class="btns">
           <a class="btn primary" href="#projects">View Projects</a>
           <a class="btn" href="#contact">Get in touch</a>
@@ -74,10 +74,10 @@
       <div class="card pad">
         <h2 id="about" class="anchor">About</h2>
         <p>
-          I build end‑to‑end perception pipelines for autonomous systems, specializing in LiDAR–camera fusion,
+          I build end-to-end perception pipelines for autonomous systems, specializing in LiDAR–camera fusion,
           3D object detection, V2I perception, semantic segmentation, and calibration. My master’s thesis at ASU’s BELIV Lab
-          delivered a 3D LiDAR–camera late‑fusion stack with a dual‑update Kalman filter that extended perception range by 252% (21.6→76m),
-          validated through real‑world testing on our research vehicle.
+          delivered a 3D LiDAR–camera late-fusion stack with a dual-update Kalman filter that extended perception range by 252% (21.6→76m),
+          validated through real-world testing on our research vehicle.
         </p>
       </div>
     </section>
@@ -87,24 +87,24 @@
       <div class="grid">
         <article class="card pad">
           <h3>3D LiDAR–Camera Fusion for Extended V2I Perception</h3>
-          <p class="meta">ROS 2 • Autoware • Kalman Filter • CARLA/ScenarioRunner</p>
+          <p class="meta">ROS 2 • Autoware • Kalman Filter • CARLA/ScenarioRunner</p>
           <ul>
-            <li>Late‑fusion of onboard LiDAR with RSU camera streams for occlusion‑aware 3D detection and tracking.</li>
-            <li>Dual‑update Kalman filter for asynchronous fusion; achieved 0.51 m RMSE and 252% range extension.</li>
-            <li>Validated in CARLA and on‑vehicle; measured latency/FPS and robustness under varied conditions.</li>
+            <li>Late-fusion of onboard LiDAR with RSU camera streams for occlusion-aware 3D detection and tracking.</li>
+            <li>Dual-update Kalman filter for asynchronous fusion; achieved 0.51 m RMSE and 252% range extension.</li>
+            <li>Validated in CARLA and on-vehicle; measured latency/FPS and robustness under varied conditions.</li>
           </ul>
         </article>
         <article class="card pad">
           <h3>Autoware + Autoseg Semantic Segmentation (Industry Collaboration)</h3>
-          <p class="meta">ROS 2 • Autoware • Semantic Segmentation • On‑vehicle bring‑up</p>
+          <p class="meta">ROS 2 • Autoware • Semantic Segmentation • On-vehicle bring-up</p>
           <ul>
-            <li>Integrated Autoseg into the Autoware perception stack to enhance real‑time scene understanding.</li>
-            <li>Deployed on the lab vehicle; benchmarking 3D mAP, segmentation IoU, and end‑to‑end latency.</li>
+            <li>Integrated Autoseg into the Autoware perception stack to enhance real-time scene understanding.</li>
+            <li>Deployed on the lab vehicle; benchmarking 3D mAP, segmentation IoU, and end-to-end latency.</li>
           </ul>
         </article>
         <article class="card pad">
           <h3>Camera–LiDAR Calibration for 360° Surround Perception</h3>
-          <p class="meta">AprilTag PnP • SQPnP • Autoware ROS 2</p>
+          <p class="meta">AprilTag PnP • SQPnP • Autoware ROS 2</p>
           <ul>
             <li>Upgraded platform to 6 cameras + 2 LiDAR; executed intrinsic/extrinsic calibration for precise fusion.</li>
             <li>Integrated calibration outputs into Autoware; improved spatial alignment and detection stability.</li>
@@ -114,7 +114,7 @@
           <h3>Traffic Light & Sign Detection in Adverse Conditions</h3>
           <p class="meta">YOLOv11n • LISA + CARLA augmentation</p>
           <ul>
-            <li>Robust detector trained with motion‑blur, fog, rain, and occlusion augmentations.</li>
+            <li>Robust detector trained with motion-blur, fog, rain, and occlusion augmentations.</li>
             <li>Achieved 89.3% mAP@50 on LISA; 78.1% mAP@50 on augmented tests.</li>
           </ul>
         </article>
@@ -127,7 +127,7 @@
         <ul>
           <li>Optimizing Perception Capabilities of Autonomous Vehicles Through V2I Late Fusion using Kalman Filter — MECC 2025</li>
           <li>Upgrading an Automated Vehicle Research Platform for Enhanced Perception and Distributed Computing — IFAC IAV 2025</li>
-          <li>Trustworthy Conceptual Explanations for Neural Networks in Robot Decision‑Making — IROS 2025</li>
+          <li>Trustworthy Conceptual Explanations for Neural Networks in Robot Decision-Making — IROS 2025</li>
         </ul>
       </div>
     </section>
@@ -138,7 +138,7 @@
         <div>
           <span class="badge">Python</span>
           <span class="badge">C++</span>
-          <span class="badge">ROS 2</span>
+          <span class="badge">ROS 2</span>
           <span class="badge">Autoware</span>
           <span class="badge">CARLA</span>
           <span class="badge">PyTorch</span>
@@ -157,7 +157,7 @@
       <h2>Contact</h2>
       <div class="card pad">
         <p>
-          Tempe, AZ · <a href="mailto:pranavramesh01@gmail.com">pranavramesh01@gmail.com</a> · <a href="tel:+16237591975">(623) 759‑1975</a>
+          Tempe, AZ · <a href="mailto:pranavramesh01@gmail.com">pranavramesh01@gmail.com</a> · <a href="tel:+16237591975">(623) 759-1975</a>
           · <a href="https://www.linkedin.com/in/pranav-ramesh-bidare" target="_blank" rel="noopener">LinkedIn</a>
         </p>
       </div>
