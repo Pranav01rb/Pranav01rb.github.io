@@ -9,8 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg: #0b0c10; --panel:#0f1117; --card:#111319; --text:#e6e8ee; --muted:#a7b0c0; --accent:#528bff; --line:#1b1f2a;
+    :root {
+      --bg: #0b0c10; --panel:#0f1117; --card:#111319; --text:#e6e8ee;
+      --muted:#a7b0c0; --accent:#528bff; --line:#1b1f2a;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
     }
     @media (prefers-color-scheme: light){
@@ -44,8 +45,32 @@
     .lead{font-size:18px;color:var(--muted)}
     ul{list-style:none;margin:0;padding:0}
     li+li{margin-top:8px}
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    @media (max-width:960px){ .grid{grid-template-columns:1fr} }
+
+    /* Project layout — stacked vertically */
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* Video + image side by side */
+    .media-pair {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin: 10px 0;
+    }
+    .media-pair video,
+    .media-pair img {
+      width: 45%;
+      max-width: 360px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
     .meta{color:var(--muted);font-size:14px}
     .badge{display:inline-block;padding:6px 10px;border:1px solid var(--line);border-radius:999px;margin:4px 6px 0 0;font-size:12px;color:var(--muted)}
     footer{margin:28px 0;color:var(--muted);font-size:14px;text-align:center}
@@ -60,7 +85,7 @@
         <img src="imgs/headshot.jpg" alt="Pranav Ramesh Bidare" class="avatar">
       </div>
       <div class="name">Pranav Ramesh Bidare</div>
-      <p class="tag">Robotics & Autonomous Systems • AV Perception • Sensor Fusion • Multi-sensor Calibration • LiDAR–camera 3D object detection </p>
+      <p class="tag">Robotics & Autonomous Systems • AV Perception • Sensor Fusion • Multi-sensor Calibration • LiDAR–camera 3D object detection</p>
       <div class="links">
         <a href="https://scholar.google.com/citations?user=X2nf-oAAAAAJ&hl=en">Google Scholar</a>
         <a href="https://www.linkedin.com/in/pranav-ramesh-bidare" target="_blank" rel="noopener">LinkedIn</a>
@@ -80,40 +105,48 @@
     <main>
       <section id="about" class="card pad anchor">
         <h2>About</h2>
-        <p>
-          <li> I am a passionate Robotics and Autonomous Systems Engineer specializing in autonomous vehicle perception and sensor fusion pipelines. I have hands-on experience in the design and deployment of end-to-end perception pipelines integrating 3D object detection, multi-sensor fusion, and semantic segmentation using frameworks such as ROS2, Autoware, and CARLA. <li> 
-          <li> I am seeking Perception Engineer, Sensor Fusion Engineer, or Machine Learning Engineer roles in the autonomous vehicle or robotics industry, where I can design, optimize, and deploy scalable, real-time perception systems that bridge research and production. </li>
-        </p>
+        <ul>
+          <li>I am a passionate Robotics and Autonomous Systems Engineer specializing in autonomous vehicle perception and sensor fusion pipelines. I have hands-on experience in the design and deployment of end-to-end perception pipelines integrating 3D object detection, multi-sensor fusion, and semantic segmentation using frameworks such as ROS2, Autoware, and CARLA.</li>
+          <li>I am seeking Perception Engineer, Sensor Fusion Engineer, or Machine Learning Engineer roles in the autonomous vehicle or robotics industry, where I can design, optimize, and deploy scalable, real-time perception systems that bridge research and production.</li>
+        </ul>
       </section>
 
       <section id="projects" class="anchor">
         <div class="card pad">
           <h2>Projects</h2>
           <div class="grid">
-              <article class="card pad">  
+
+            <!-- V2I Project -->
+            <article class="card pad">  
               <h3>Vehicle-to-Infrastructure (V2I) Based 3D Object Detection and Sensor Fusion</h3>
-              <p class="meta">ROS 2 • Autoware • Kalman Filter • CARLA • ScenarioRunner</p>
-              <!-- Demo video -->
+              <p class="meta">ROS 2 • Autoware • Kalman Filter • CARLA • ScenarioRunner</p>
+
+              <!-- Demo video + Image -->
               <div class="media-pair">
-              <video class="demo-video" controls playsinline preload="metadata" height = "300" width = "300">
-              <source src="/imgs/v2i_video.mp4" type="video/mp4" />
-              </video>
-              <img src="/imgs/v2i_img.jpg" alt="V2I perception pipeline visualization" class="project-img" height = "200" width = "150" />
-              </div>        
+                <video controls playsinline preload="metadata">
+                  <source src="imgs/v2i_video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <img src="imgs/v2i_img.jpg" alt="V2I perception pipeline visualization" />
+              </div>
+
               <ul>
                 <li>Built a cooperative perception framework that fuses onboard LiDAR and infrastructure camera data for occlusion-aware 3D detection.</li>
                 <li>Designed a dual-update Kalman Filter to fuse asynchronous sensors, handling delay and noise robustly.</li>
-                <li>conducted real-world Validation using the Mache Research Vehicle.</li>
+                <li>Conducted real-world validation using the Mache Research Vehicle.</li>
               </ul>
             </article>
+
+            <!-- Other Projects -->
             <article class="card pad">
               <h3>Autoware + Autoseg Semantic Segmentation (Industry Collaboration)</h3>
-              <p class="meta">ROS 2 • Autoware • Semantic Segmentation • On‑vehicle bring‑up</p>
+              <p class="meta">ROS 2 • Autoware • Semantic Segmentation • On-vehicle bring-up</p>
               <ul>
-                <li>Integrated Autoseg into the Autoware perception stack to enhance real‑time scene understanding.</li>
-                <li>Deployed on the lab vehicle; benchmarking 3D mAP, segmentation IoU, and end‑to‑end latency.</li>
+                <li>Integrated Autoseg into the Autoware perception stack to enhance real-time scene understanding.</li>
+                <li>Deployed on the lab vehicle; benchmarking 3D mAP, segmentation IoU, and end-to-end latency.</li>
               </ul>
             </article>
+
             <article class="card pad">
               <h3>Multi Camera-LiDAR Calibration</h3>
               <p class="meta">AprilTag • PnP • SQPnP • Autoware • ROS2</p>
@@ -122,14 +155,16 @@
                 <li>Integrated calibration outputs into Autoware; improved spatial alignment and detection stability.</li>
               </ul>
             </article>
+
             <article class="card pad">
               <h3>Traffic Light & Sign Detection in Adverse Conditions</h3>
               <p class="meta">YOLOv11n • LISA + CARLA augmentation</p>
               <ul>
-                <li>Robust detector trained with motion‑blur, fog, rain, and occlusion augmentations.</li>
+                <li>Robust detector trained with motion-blur, fog, rain, and occlusion augmentations.</li>
                 <li>Achieved 89.3% mAP@50 on LISA; 78.1% mAP@50 on augmented tests.</li>
               </ul>
             </article>
+
           </div>
         </div>
       </section>
@@ -139,7 +174,7 @@
         <ul>
           <li>Optimizing Perception Capabilities of Autonomous Vehicles Through V2I Late Fusion using Kalman Filter — MECC 2025</li>
           <li>Upgrading an Automated Vehicle Research Platform for Enhanced Perception and Distributed Computing — IFAC IAV 2025</li>
-          <li>Trustworthy Conceptual Explanations for Neural Networks in Robot Decision‑Making — IROS 2025</li>
+          <li>Trustworthy Conceptual Explanations for Neural Networks in Robot Decision-Making — IROS 2025</li>
         </ul>
       </section>
 
@@ -148,7 +183,7 @@
         <div>
           <span class="badge">Python</span>
           <span class="badge">C++</span>
-          <span class="badge">ROS 2</span>
+          <span class="badge">ROS 2</span>
           <span class="badge">Autoware</span>
           <span class="badge">CARLA</span>
           <span class="badge">PyTorch</span>
@@ -165,9 +200,9 @@
       <section id="contact" class="card pad anchor">
         <h2>Contact</h2>
         <p>
-          Tempe, AZ · <a href="mailto:pranavramesh01@gmail.com">pranavramesh01@gmail.com</a> · <a href="tel:+16237591975">(623) 759‑1975</a>
-          · <a href="https://www.linkedin.com/in/pranav-ramesh-bidare" target="_blank" rel="noopener">LinkedIn</a> 
-          . <a href="https://scholar.google.com/citations?user=X2nf-oAAAAAJ&hl=en">Google Scholar</a>
+          Tempe, AZ · <a href="mailto:pranavramesh01@gmail.com">pranavramesh01@gmail.com</a> · <a href="tel:+16237591975">(623) 759-1975</a>
+          · <a href="https://www.linkedin.com/in/pranav-ramesh-bidare" target="_blank" rel="noopener">LinkedIn</a>
+          · <a href="https://scholar.google.com/citations?user=X2nf-oAAAAAJ&hl=en">Google Scholar</a>
         </p>
       </section>
 
