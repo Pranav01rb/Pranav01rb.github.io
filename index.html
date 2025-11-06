@@ -62,9 +62,16 @@
       flex-wrap: wrap;
       margin: 10px 0;
     }
-    .media-pair video,
+
+    .media-pair video {
+  width: 25%;          /* larger video */
+  max-width: 520px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+},
     .media-pair img {
-      width: 45%;
+      width: 25%;
       max-width: 360px;
       border-radius: 12px;
       border: 1px solid var(--line);
