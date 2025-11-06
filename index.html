@@ -92,16 +92,15 @@
           <div class="grid">
               <h3>Vehicle-to-Infrastructure (V2I) Based 3D Object Detection and Sensor Fusion</h3>
               <p class="meta">ROS 2 • Autoware • Kalman Filter • CARLA • ScenarioRunner</p>
-            <!-- Demo video -->
-            <video class="demo-video" controls playsinline preload="metadata">
-            <source src="/imgs/v2i_video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-            </video>
-
-            <!-- Project image -->
-            <img src="/imgs/v2i_img.jpg" alt="V2I perception pipeline visualization" class="project-img" />  
-            <article class="card pad">              
-            <ul>
+              <article class="card pad">  
+              <!-- Demo video -->
+              <div class="media-pair">
+              <video class="demo-video" controls playsinline preload="metadata" height = "400" width = "400">
+              <source src="/imgs/v2i_video.mp4" type="video/mp4" />
+              </video>
+              <img src="/imgs/v2i_img.jpg" alt="V2I perception pipeline visualization" class="project-img" />
+              </div>        
+              <ul>
                 <li>Built a cooperative perception framework that fuses onboard LiDAR and infrastructure camera data for occlusion-aware 3D detection.</li>
                 <li>Designed a dual-update Kalman Filter to fuse asynchronous sensors, handling delay and noise robustly.</li>
                 <li>conducted real-world Validation using the Mache Research Vehicle.</li>
