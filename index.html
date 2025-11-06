@@ -63,21 +63,6 @@
       margin: 10px 0;
     }
 
-    .media-pair video {
-  width: 25%;          /* larger video */
-  max-width: 520px;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-},
-    .media-pair img {
-      width: 25%;
-      max-width: 360px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-
     .meta{color:var(--muted);font-size:14px}
     .badge{display:inline-block;padding:6px 10px;border:1px solid var(--line);border-radius:999px;margin:4px 6px 0 0;font-size:12px;color:var(--muted)}
     footer{margin:28px 0;color:var(--muted);font-size:14px;text-align:center}
@@ -131,10 +116,10 @@
               <!-- Demo video + Image -->
               <div class="media-pair">
                 <video controls playsinline preload="metadata">
-                  <source src="imgs/v2i_video.mp4" type="video/mp4" />
+                  <source src="imgs/v2i_video.mp4" type="video/mp4" height="300" width="300"/>
                   Your browser does not support the video tag.
                 </video>
-                <img src="imgs/v2i_img.jpg" alt="V2I perception pipeline visualization" />
+                <img src="imgs/v2i_img.jpg" alt="V2I perception pipeline visualization" height="300" width="200"/>
               </div>
 
               <ul>
