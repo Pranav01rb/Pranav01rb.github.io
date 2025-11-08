@@ -24,9 +24,9 @@
     a:hover{text-decoration:underline}
 
     /* Layout */
-    .wrap{display:grid;grid-template-columns:320px 1fr;gap:28px;max-width:1200px;margin:0 auto;padding:28px}
-    .sticky{position:sticky;top:24px;align-self:start}
-    .panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:24px}
+    .wrap{display:grid;grid-template-columns:320px 1fr;gap:28px;max-width:1200px;margin:0 auto;padding:28px;position:relative;z-index:0;}
+    .sticky{position:sticky;top:24px;align-self:start;z-index:1;}
+    .panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:24px;position:relative;z-index:1;}
     .card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);}
     .pad{padding:24px}
 
@@ -39,6 +39,7 @@
     .links a{margin-right:12px}
 
     /* Main content */
+    main{position:relative;z-index:5;} /* ensures main content is always above */
     section{margin:0 0 24px}
     h2{font-size:22px;margin:0 0 12px}
     ul{list-style:none;margin:0;padding:0}
@@ -64,9 +65,13 @@
 
     /* Mobile fixes */
     @media (max-width:900px){
-      .wrap{display:block;padding:14px}
-      .sticky, aside.panel{position:static!important;margin-bottom:16px;z-index:1}
-      main{position:relative;z-index:2}
+      .wrap{display:block;padding:14px;}
+      .sticky, aside.panel{
+        position:static !important;
+        z-index:auto !important;
+        margin-bottom:16px;
+      }
+      main{position:relative;z-index:10;}
       .avatar{width:160px;height:160px}
       .name{font-size:26px}
       .tag{font-size:14px}
@@ -141,66 +146,8 @@
                 <li>Deployed on the lab vehicle; benchmarking 3D mAP, segmentation IoU, and end-to-end latency.</li>
               </ul>
             </article>
-
-            <article class="card pad">
-              <h3>Multi Camera-LiDAR Calibration</h3>
-              <p class="meta">AprilTag • PnP • SQPnP • Autoware • ROS2</p>
-              <ul>
-                <li>Upgraded platform to 6 cameras + 2 LiDAR; executed intrinsic/extrinsic calibration for precise fusion.</li>
-                <li>Integrated calibration outputs into Autoware; improved spatial alignment and detection stability.</li>
-              </ul>
-            </article>
-
-            <article class="card pad">
-              <h3>Traffic Light & Sign Detection in Adverse Conditions</h3>
-              <p class="meta">YOLOv11n • LISA + CARLA augmentation</p>
-              <ul>
-                <li>Trained a robust detector under motion-blur, fog, rain, and occlusions.</li>
-                <li>Achieved 89.3% mAP@50 on LISA; 78.1% mAP@50 on augmented tests.</li>
-              </ul>
-            </article>
           </div>
         </div>
-      </section>
-
-      <section id="publications" class="card pad anchor">
-        <h2>Publications</h2>
-        <ul>
-          <li>Optimizing Perception Capabilities of Autonomous Vehicles Through V2I Late Fusion using Kalman Filter — MECC 2025 (In Press) <a href="https://www.researchgate.net/publication/396831237_Optimizing_Perception_Capabilities_of_Autonomous_Vehicles_Through_V2I_Late_Fusion_using_Kalman_Filter" target="_blank" rel="noopener">View Here</a></li>
-          <li>Upgrading an Automated Vehicle Research Platform for Enhanced Perception and Distributed Computing — IFAC IAV 2025 <a href="https://www.sciencedirect.com/science/article/pii/S2405896325003489" target="_blank" rel="noopener">View Here</a></li>
-          <li>Trustworthy Conceptual Explanations for Neural Networks in Robot Decision-Making — IROS 2025 <a href="https://arxiv.org/abs/2409.10733" target="_blank" rel="noopener">View Here</a></li>
-          <li>Design of a Real-Time GAN based Speech Recognizer for Consumer Electronics — IEEE ICICT 2023 <a href="https://ieeexplore.ieee.org/abstract/document/10134295" target="_blank" rel="noopener">View Here</a></li>
-          <li>Design and Evaluation of a Vehicle Detection System in Low Light Conditions — IEEE SPIN 2023 <a href="https://ieeexplore.ieee.org/abstract/document/10116614" target="_blank" rel="noopener">View Here</a></li>
-          <li>Design and Evaluation of an Electronic Eye for Fire Detection in Human Space Capsule — IEEE ICARES 2022 <a href="https://ieeexplore.ieee.org/abstract/document/9993503" target="_blank" rel="noopener">View Here</a></li>
-        </ul>
-      </section>
-
-      <section id="skills" class="card pad anchor">
-        <h2>Skills</h2>
-        <div>
-          <span class="badge">Python</span>
-          <span class="badge">C++</span>
-          <span class="badge">ROS 2</span>
-          <span class="badge">Autoware</span>
-          <span class="badge">CARLA</span>
-          <span class="badge">PyTorch</span>
-          <span class="badge">TensorFlow</span>
-          <span class="badge">OpenCV</span>
-          <span class="badge">Kalman Filters</span>
-          <span class="badge">Sensor Calibration</span>
-          <span class="badge">Jetson Orin</span>
-          <span class="badge">Git</span>
-          <span class="badge">Jira</span>
-        </div>
-      </section>
-
-      <section id="contact" class="card pad anchor">
-        <h2>Contact</h2>
-        <p>
-          Tempe, AZ · <a href="mailto:pranavramesh01@gmail.com">pranavramesh01@gmail.com</a> · <a href="tel:+16237591975">(623) 759-1975</a>
-          · <a href="https://www.linkedin.com/in/pranav-ramesh-bidare" target="_blank" rel="noopener">LinkedIn</a>
-          · <a href="https://scholar.google.com/citations?user=X2nf-oAAAAAJ&hl=en">Google Scholar</a>
-        </p>
       </section>
 
       <footer>© <span id="year"></span> Pranav Ramesh Bidare. Built with HTML/CSS and hosted on GitHub Pages.</footer>
