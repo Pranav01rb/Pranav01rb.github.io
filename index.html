@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg:#0b0c10; --panel:#0f1117; --card:#111319; --text:#e6e8ee;
@@ -24,42 +25,22 @@
 
     /* Layout */
     .wrap{display:grid;grid-template-columns:320px 1fr;gap:28px;max-width:1200px;margin:0 auto;padding:28px}
-    @media (max-width:960px){
-      .wrap{grid-template-columns:1fr;padding:20px}
-      .sticky{position:static}
-    }
-    @media (max-width:600px){
-      .wrap{padding:14px}
-    }
-
     .sticky{position:sticky;top:24px;align-self:start}
     .panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:24px}
     .card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);}
     .pad{padding:24px}
-    @media (max-width:600px){
-      .panel{padding:16px}
-      .pad{padding:16px}
-    }
 
     /* Sidebar */
     .avatar{width:220px;height:220px;border-radius:18px;object-fit:cover;border:4px solid var(--line);box-shadow:var(--shadow)}
     .name{font-size:32px;font-weight:800;line-height:1.1;margin:18px 0 6px}
     .tag{color:var(--muted);margin:0 0 16px}
-    .nav a{display:inline-block;padding:10px 12px;border-radius:10px;font-weight:600;margin:6px 6px 0 0;border:1px solid var(--line)}
+    .nav a{display:block;padding:10px 12px;border-radius:10px;font-weight:600;margin:6px 0;border:1px solid var(--line)}
     .nav a:hover{background:rgba(127,127,127,.08)}
     .links a{margin-right:12px}
 
-    @media (max-width:600px){
-      .avatar{width:140px;height:140px;border-width:3px}
-      .name{font-size:26px}
-      .tag{font-size:14px}
-      .nav a{padding:8px 10px;font-size:14px}
-    }
-
-    /* Main */
+    /* Main content */
     section{margin:0 0 24px}
     h2{font-size:22px;margin:0 0 12px}
-    .lead{font-size:18px;color:var(--muted)}
     ul{list-style:none;margin:0;padding:0}
     li+li{margin-top:8px}
     .meta{color:var(--muted);font-size:14px}
@@ -70,7 +51,7 @@
     /* Projects stacked vertically */
     .grid{display:flex;flex-direction:column;gap:18px}
 
-    /* Video + image side by side (desktop), stacked (mobile) */
+    /* Video + image layout */
     .media-pair{
       display:flex;justify-content:center;align-items:flex-start;gap:16px;flex-wrap:wrap;margin:10px 0;
     }
@@ -80,15 +61,27 @@
     .media-pair img{
       width:28%;max-width:240px;border-radius:12px;border:1px solid var(--line);box-shadow:var(--shadow);
     }
+
+    /* Mobile fixes */
+    @media (max-width:900px){
+      .wrap{display:block;padding:14px}
+      .sticky, aside.panel{position:static!important;margin-bottom:16px;z-index:1}
+      main{position:relative;z-index:2}
+      .avatar{width:160px;height:160px}
+      .name{font-size:26px}
+      .tag{font-size:14px}
+      .nav a{display:inline-block;font-size:14px;margin:4px 6px 0 0;padding:8px 10px}
+    }
     @media (max-width:768px){
       .media-pair{flex-direction:column;align-items:center}
       .media-pair video,.media-pair img{width:100%;max-width:100%}
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <!-- LEFT SIDEBAR -->
+    <!-- Sidebar -->
     <aside class="panel sticky">
       <div style="display:flex;justify-content:center">
         <img src="imgs/headshot.jpg" alt="Pranav Ramesh Bidare" class="avatar" loading="lazy">
@@ -110,12 +103,12 @@
       </nav>
     </aside>
 
-    <!-- MAIN CONTENT -->
+    <!-- Main -->
     <main>
       <section id="about" class="card pad anchor">
         <h2>About</h2>
         <ul>
-          <li>I am a passionate Robotics and Autonomous Systems Engineer specializing in autonomous vehicle perception and sensor fusion pipelines. I have hands-on experience in the design and deployment of end-to-end perception pipelines integrating 3D object detection, multi-sensor fusion, and semantic segmentation using frameworks such as ROS2, Autoware, and CARLA.</li>
+          <li>I am a passionate Robotics and Autonomous Systems Engineer specializing in autonomous vehicle perception and sensor fusion pipelines. I have hands-on experience in designing and deploying end-to-end perception pipelines integrating 3D object detection, multi-sensor fusion, and semantic segmentation using frameworks such as ROS2, Autoware, and CARLA.</li>
           <li>I am seeking Perception Engineer, Sensor Fusion Engineer, or Machine Learning Engineer roles in the autonomous vehicle or robotics industry, where I can design, optimize, and deploy scalable, real-time perception systems that bridge research and production.</li>
         </ul>
       </section>
@@ -124,29 +117,22 @@
         <div class="card pad">
           <h2>Projects</h2>
           <div class="grid">
-
-            <!-- V2I Project -->
             <article class="card pad">  
               <h3>Vehicle-to-Infrastructure (V2I) Based 3D Object Detection and Sensor Fusion</h3>
               <p class="meta">ROS 2 • Autoware • Kalman Filter • CARLA • ScenarioRunner</p>
-
-              <!-- Demo video + Image -->
               <div class="media-pair">
                 <video controls playsinline preload="metadata" poster="imgs/v2i_poster.jpg">
                   <source src="imgs/v2i_video.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
                 </video>
                 <img src="imgs/v2i_img.jpg" alt="V2I perception pipeline visualization" loading="lazy"/>
               </div>
-
               <ul>
-                <li>Built a cooperative perception framework that fuses onboard LiDAR and infrastructure camera data for occlusion-aware 3D detection.</li>
+                <li>Built a cooperative perception framework fusing onboard LiDAR and infrastructure camera data for occlusion-aware 3D detection.</li>
                 <li>Designed a dual-update Kalman Filter to fuse asynchronous sensors, handling delay and noise robustly.</li>
                 <li>Conducted real-world validation using the Mache Research Vehicle.</li>
               </ul>
             </article>
 
-            <!-- Other Projects -->
             <article class="card pad">
               <h3>Autoware + Autoseg Semantic Segmentation (Industry Collaboration)</h3>
               <p class="meta">ROS 2 • Autoware • Semantic Segmentation • On-vehicle bring-up</p>
@@ -169,11 +155,10 @@
               <h3>Traffic Light & Sign Detection in Adverse Conditions</h3>
               <p class="meta">YOLOv11n • LISA + CARLA augmentation</p>
               <ul>
-                <li>Robust detector trained with motion-blur, fog, rain, and occlusion augmentations.</li>
+                <li>Trained a robust detector under motion-blur, fog, rain, and occlusions.</li>
                 <li>Achieved 89.3% mAP@50 on LISA; 78.1% mAP@50 on augmented tests.</li>
               </ul>
             </article>
-
           </div>
         </div>
       </section>
@@ -218,9 +203,7 @@
         </p>
       </section>
 
-      <footer>
-        © <span id="year"></span> Pranav Ramesh Bidare. Built with HTML/CSS and hosted on GitHub Pages.
-      </footer>
+      <footer>© <span id="year"></span> Pranav Ramesh Bidare. Built with HTML/CSS and hosted on GitHub Pages.</footer>
     </main>
   </div>
 
