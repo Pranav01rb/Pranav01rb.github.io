@@ -91,7 +91,7 @@
       <div class="links">
         <a href="https://scholar.google.com/citations?user=X2nf-oAAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
         <a href="https://www.linkedin.com/in/pranav-ramesh-bidare" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="Resume_Pranav.pdf" target="_blank" rel="noopener">Resume</a>
       </div>
       <hr style="border:none;border-top:1px solid var(--line);margin:18px 0">
       <nav class="nav">
@@ -108,7 +108,7 @@
       <section id="about" class="card pad anchor">
         <h2>About</h2>
         <ul>
-          <li>I am a passionate Robotics and Autonomous Systems Engineer specializing in autonomous vehicle perception and sensor fusion pipelines. I have hands-on experience in designing and deploying end-to-end perception pipelines integrating 3D object detection, multi-sensor fusion, and semantic segmentation using frameworks such as ROS2, Autoware, and CARLA.</li>
+          <li>I am a passionate Robotics and Autonomous Systems Engineer specializing in autonomous vehicle perception and sensor fusion pipelines. I have 2+ years of hands-on experience in designing and deploying end-to-end perception pipelines integrating 3D object detection, multi-sensor fusion, and semantic segmentation using frameworks such as ROS2, Autoware, and CARLA.</li>
           <li>I am seeking Perception Engineer, Sensor Fusion Engineer, or Machine Learning Engineer roles in the autonomous vehicle or robotics industry, where I can design, optimize, and deploy scalable, real-time perception systems that bridge research and production.</li>
         </ul>
       </section>
@@ -155,30 +155,49 @@
             </article>
 
             <article class="card pad">
-              <h3>Autoware + Autoseg Semantic Segmentation (Industry Collaboration)</h3>
+              <h3>Autoware SceneSeg Semantic Segmentation for Hazard Detection (Autoware Collaboration)</h3>
               <p class="meta">ROS 2 • Autoware • Semantic Segmentation • On-vehicle bring-up</p>
+              <p style="margin: 0; line-height: 1.5;">
+              This project focused on the real time deployment of semantic segmentation on a fully autonomous Ford Mach E research vehicle. By optimizing deep learning models for edge hardware, the system provided reliable hazard detection for challenging scenarios like animal related road obstacles, for a CES 2026 event.
+              </p>
+              </div>
               <ul>
-                <li>Integrated Autoseg into the Autoware perception stack to enhance real-time scene understanding.</li>
-                <li>Deployed on the lab vehicle; benchmarking 3D mAP, segmentation IoU, and end-to-end latency.</li>
+                <li>Optimized and deployed Autoware SceneSeg on vehicle using ONNX and TensorRT to ensure low latency performance.</li>
+                <li>Validated system robustness across public ADAS hazard testing cases including animal related scenarios in collaboration with the Autoware Foundation.</li>
+                <li>Integrated the perception stack with the Autoware ROS2 pipeline to enhance real time scene understanding on the lab research vehicle.</li>
               </ul>
             </article>
 
             <article class="card pad">
-              <h3>Multi Camera-LiDAR Calibration</h3>
+              <h3>Multi Camera-LiDAR Calibrationfor Multi-View Perception</h3>
               <p class="meta">AprilTag • PnP • SQPnP • Autoware • ROS2</p>
+              <p style="margin: 0; line-height: 1.5;">
+              This project involved a major system upgrade from a 135 degree forward facing setup to a comprehensive 360 degree surround perception system. By performing precise intrinsic and extrinsic calibration across multiple sensors, I enabled accurate spatial alignment which is the foundation for reliable multi sensor fusion and obstacle detection.
+              </p>
+              </div>
               <ul>
-                <li>Upgraded platform to 6 cameras + 2 LiDAR; executed intrinsic/extrinsic calibration for precise fusion.</li>
-                <li>Integrated calibration outputs into Autoware; improved spatial alignment and detection stability.</li>
+                <li>Led a system upgrade to a 360 degree surround perception suite utilizing a 6 camera and 2 LiDAR sensor configuration.</li>
+                <li>Executed intrinsic and extrinsic calibration using AprilTag based PnP and SQPnP optimization to achieve precise spatial alignment.</li>
+                <li>Integrated the calibrated sensor outputs into the Autoware ROS 2 pipeline to improve detection stability and spatial accuracy.</li>
               </ul>
             </article>
 
             <article class="card pad">
               <h3>Traffic Light & Sign Detection in Adverse Conditions</h3>
               <p class="meta">YOLOv11n • LISA + CARLA augmentation</p>
+              <p style="margin: 0; line-height: 1.5;">
+              This research addresses the drop in perception accuracy caused by adverse weather and motion blur. By leveraging a combination of synthetic data generation and a custom weighted loss function, I developed a more resilient detection system that maintains high performance even when traditional models fail due to environmental perturbations.
+              </p>
+              </div>
+  <!-- <div class="media-pair">
+    <img src="imgs/traffic_augmentation.jpg" alt="Traffic sign detection augmentations including fog rain and motion blur" style="width: 100%; max-width: 600px;" />
+  </div> -->
               <ul>
-                <li>Trained a robust detector under motion-blur, fog, rain, and occlusions.</li>
-                <li>Achieved 89.3% mAP@50 on LISA; 78.1% mAP@50 on augmented tests.</li>
-              </ul>
+                <li>Engineered a YOLOv11n based detection pipeline trained on the LISA dataset and supplemented with synthetic data from the CARLA simulator to represent rare and difficult scenarios[cite: 46, 62, 166].</li>
+                <li>Implemented a custom loss function with enhanced localization penalties for small bounding boxes and class weighting to address visibility challenges and dataset imbalance[cite: 120, 122, 123].</li>
+                <li>Applied extensive data augmentation techniques including randomized motion blur kernels, Gaussian blur for fog simulation, and raindrop effects to improve model robustness[cite: 127, 128, 130, 133].</li>
+                <li>Achieved a baseline mAP50 of 88.6 percent and maintained 78.1 percent mAP50 across augmented tests featuring motion blur, fog, rain, and occlusions[cite: 31, 170, 172].</li>
+            </ul>
             </article>
           </div>
         </div>
