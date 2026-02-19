@@ -123,7 +123,7 @@
     <ul style="margin-top: 8px;">
       <li>Thesis Based MS </li>
       <li>4.0 / 4.0 GPA </li>
-      <li>Focus on Perception, Sensor Fusion, and Deep Learning [cite: 8]</li>
+      <li>Focus on Perception, Sensor Fusion, and Deep Learning </li>
     </ul>
   </div>
 </section>
@@ -143,9 +143,12 @@
                 <img src="imgs/v2i_img.jpg" alt="V2I perception pipeline visualization" height="300" width="200"/>
               </div>
               <ul>
-                <li>Built a cooperative perception framework fusing onboard LiDAR and infrastructure camera data for occlusion-aware 3D detection.</li>
-                <li>Designed a dual-update Kalman Filter to fuse asynchronous sensors, handling delay and noise robustly.</li>
-                <li>Conducted real-world validation using the Mache Research Vehicle.</li>
+                <li>Developed an end to end sensor fusion perception stack in Python and ROS2 for 3D object detection, merging onboard LiDAR with infrastructure camera data.</li>
+                <li>Engineered a dual update Kalman Filter to fuse asynchronous LiDAR and camera data, successfully overcoming network delays and noise to deliver smoother multi sensor state estimation.</li>
+                <li>Extended the detection range by 252% and reduced RMSE by 43% by identifying gaps in existing cooperative perception and implementing a real time late fusion framework.</li>
+                <li>Created and executed four different urban traffic scenarios using CARLA and ScenarioRunner to conduct validation of the proposed pipeline. </li>
+                <li>Conducted real-world validation using the Ford Mach-E Research Vehicle.</li>
+                <p class="meta" style="margin-bottom: 0;">This work addresses the "occluded view" problem in autonomous driving by leveraging Road Side Units (RSU). </p>
               </ul>
             </article>
 
