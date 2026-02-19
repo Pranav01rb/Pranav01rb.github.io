@@ -135,9 +135,11 @@
             <article class="card pad">  
               <h3>Vehicle-to-Infrastructure (V2I) Based 3D Object Detection and Sensor Fusion</h3>
               <p class="meta">ROS 2 • Autoware • Kalman Filter • CARLA • ScenarioRunner</p>
+              <div style="background: rgba(82, 139, 255, 0.1); padding: 16px; border-radius: 12px; margin: 16px 0; border-left: 4px solid var(--accent);">
               <p style="margin: 0; line-height: 1.5;">
-      Summary: This work addresses the occlusion problem in autonomous driving by leveraging Road Side Units (RSU). By integrating infrastructure sensors, the system can see through obstacles like buildings or large vehicles, effectively extending the perception horizon beyond the line of sight of the ego vehicle.
-    </p>
+              Summary: This work addresses the occlusion problem in autonomous driving by leveraging Road Side Units (RSU). By integrating infrastructure sensors, the system can see through obstacles like buildings or large vehicles, effectively extending the perception horizon beyond the line of sight of the ego vehicle.
+              </p>
+              </div>
               <div class="media-pair">
                 <video controls playsinline preload="metadata">
                   <source src="imgs/v2i_video.mp4" type="video/mp4" height="300" width="300"/>
@@ -157,9 +159,11 @@
             <article class="card pad">
               <h3>Autoware SceneSeg Semantic Segmentation for Hazard Detection (Autoware Collaboration)</h3>
               <p class="meta">ROS 2 • Autoware • Semantic Segmentation • On-vehicle bring-up</p>
+              <div style="background: rgba(82, 139, 255, 0.1); padding: 16px; border-radius: 12px; margin: 16px 0; border-left: 4px solid var(--accent);">
               <p style="margin: 0; line-height: 1.5;">
               This project focused on the real time deployment of semantic segmentation on a fully autonomous Ford Mach E research vehicle. By optimizing deep learning models for edge hardware, the system provided reliable hazard detection for challenging scenarios like animal related road obstacles, for a CES 2026 event.
               </p>
+              </div>
               <ul>
                 <li>Optimized and deployed Autoware SceneSeg on vehicle using ONNX and TensorRT to ensure low latency performance.</li>
                 <li>Validated system robustness across public ADAS hazard testing cases including animal related scenarios in collaboration with the Autoware Foundation.</li>
@@ -170,9 +174,11 @@
             <article class="card pad">
               <h3>Multi Camera-LiDAR Calibrationfor Multi-View Perception</h3>
               <p class="meta">AprilTag • PnP • SQPnP • Autoware • ROS2</p>
+              <div style="background: rgba(82, 139, 255, 0.1); padding: 16px; border-radius: 12px; margin: 16px 0; border-left: 4px solid var(--accent);">
               <p style="margin: 0; line-height: 1.5;">
               This project involved a major system upgrade from a 135 degree forward facing setup to a comprehensive 360 degree surround perception system. By performing precise intrinsic and extrinsic calibration across multiple sensors, I enabled accurate spatial alignment which is the foundation for reliable multi sensor fusion and obstacle detection.
               </p>
+              </div>
               <ul>
                 <li>Led a system upgrade to a 360 degree surround perception suite utilizing a 6 camera and 2 LiDAR sensor configuration.</li>
                 <li>Executed intrinsic and extrinsic calibration using AprilTag based PnP and SQPnP optimization to achieve precise spatial alignment.</li>
@@ -183,17 +189,19 @@
             <article class="card pad">
               <h3>Traffic Light & Sign Detection in Adverse Conditions</h3>
               <p class="meta">YOLOv11n • EfficientNet • LISA Dataset • CARLA Simulation</p>
+              <div style="background: rgba(82, 139, 255, 0.1); padding: 16px; border-radius: 12px; margin: 16px 0; border-left: 4px solid var(--accent);">
               <p style="margin: 0; line-height: 1.5;">
               This research addresses the drop in perception accuracy caused by adverse weather and motion blur. By leveraging a combination of synthetic data generation and a custom weighted loss function, I developed a more resilient detection system that maintains high performance even when traditional models fail due to environmental perturbations.
               </p>
+              </div>
   <!-- <div class="media-pair">
     <img src="imgs/traffic_augmentation.jpg" alt="Traffic sign detection augmentations including fog rain and motion blur" style="width: 100%; max-width: 600px;" />
   </div> -->
               <ul>
-                <li>Engineered a YOLOv11n based detection pipeline trained on the LISA dataset and supplemented with synthetic data from the CARLA simulator to represent rare and difficult scenarios[cite: 46, 62, 166].</li>
-                <li>Implemented a custom loss function with enhanced localization penalties for small bounding boxes and class weighting to address visibility challenges and dataset imbalance[cite: 120, 122, 123].</li>
-                <li>Applied extensive data augmentation techniques including randomized motion blur kernels, Gaussian blur for fog simulation, and raindrop effects to improve model robustness[cite: 127, 128, 130, 133].</li>
-                <li>Achieved a baseline mAP50 of 88.6 percent and maintained 78.1 percent mAP50 across augmented tests featuring motion blur, fog, rain, and occlusions[cite: 31, 170, 172].</li>
+                <li>Engineered a YOLOv11n based detection pipeline trained on the LISA dataset and supplemented with synthetic data from the CARLA simulator to represent rare and difficult scenarios.</li>
+                <li>Implemented a custom loss function with enhanced localization penalties for small bounding boxes and class weighting to address visibility challenges and dataset imbalance.</li>
+                <li>Applied extensive data augmentation techniques including randomized motion blur kernels, Gaussian blur for fog simulation, and raindrop effects to improve model robustness.</li>
+                <li>Achieved a baseline mAP50 of 88.6 percent and maintained 78.1 percent mAP50 across augmented tests featuring motion blur, fog, rain, and occlusions.</li>
             </ul>
             </article>
           </div>
