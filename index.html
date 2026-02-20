@@ -14,6 +14,17 @@
       --bg:#0b0c10; --panel:#0f1117; --card:#111319; --text:#e6e8ee;
       --muted:#a7b0c0; --accent:#528bff; --line:#1b1f2a;
       --shadow:0 10px 30px rgba(0,0,0,.35);
+      .pad ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+.pad li {
+  text-align: justify;
+  margin-bottom: 8px;
+}
+.pad p {
+  text-align: justify;
+}
     }
     @media (prefers-color-scheme: light){
       :root{ --bg:#f7f8fb; --panel:#ffffff; --card:#ffffff; --text:#0f172a; --muted:#475569; --accent:#1f6fff; --line:#e6e8ee; }
@@ -150,7 +161,7 @@
     </div>
     <p style="margin: 4px 0;">Arizona State University, Tempe, AZ</p>
     <ul style="margin-top: 12px;">
-      <li>- Optimized and deployed Autoware SceneSeg on vehicle using ONNX and TensorRT for robust ADAS hazard testing in collaboration with the Autoware Foundation.</li>
+      <li>Optimized and deployed Autoware SceneSeg on vehicle using ONNX and TensorRT for robust ADAS hazard testing in collaboration with the Autoware Foundation.</li>
       <li>- Developed a real time LiDAR camera sensor fusion pipeline within a V2I late fusion framework that extended detection range by 252 percent.</li>
       <li>- Established a distributed computing architecture by offloading GPU intensive perception tasks to a Jetson Orin to improve frame rates for real time detection.</li>
       <li>- Co-authored 2 research publications. </li>
