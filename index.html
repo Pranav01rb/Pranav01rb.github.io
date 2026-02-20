@@ -285,7 +285,26 @@
                 <li>Applied extensive data augmentation techniques including randomized motion blur kernels, Gaussian blur for fog simulation, and raindrop effects to improve model robustness.</li>
                 <li>Achieved a baseline mAP50 of 88.6 percent and maintained 78.1 percent mAP50 across augmented tests featuring motion blur, fog, rain, and occlusions.</li>
             </ul>
+              
             </article>
+            <article class="card pad">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+    <h3 style="margin: 0;">People Detection and Filtering for ORB SLAM in Dynamic Environments</h3>
+    <span style="font-size: 11px; color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px; border-radius: 4px; text-transform: uppercase;">Team Project</span>
+  </div>
+  <p class="meta">Python • YOLO • ORB SLAM • Computer Vision • Dynamic Environments</p>
+  <div style="background: rgba(82, 139, 255, 0.1); padding: 16px; border-radius: 12px; margin: 16px 0; border-left: 4px solid var(--accent);">
+    <p style="margin: 0; text-align: justify;">
+      Summary: This collaborative project improves SLAM robustness in high traffic areas by filtering out moving objects. By integrating a YOLO detection pipeline, the system identifies people in the frame and prevents the SLAM algorithm from tracking these dynamic outliers, which typically cause significant trajectory drift in standard implementations.
+    </p>
+  </div>
+  <ul style="margin-top: 12px;">
+    <li>Integrated a custom YOLO model to perform real time person detection and generate pixel level masks for dynamic object filtering.</li>
+    <li>Developed a feature masking pipeline that selectively ignores regions occupied by people to ensure the ORB SLAM algorithm tracks only stable background features.</li>
+    <li>Coordinated with team members to process sequential image datasets and benchmark the improved tracking stability against baseline ORB SLAM results.</li>
+    <li>Validated the perception pipeline using automated scripts to extract features and generate masked output videos for performance evaluation.</li>
+  </ul>
+</article>
           </div>
         </div>
       </section>
@@ -314,8 +333,9 @@
           <span class="badge">TensorFlow</span>
           <span class="badge">OpenCV</span>
           <span class="badge">Kalman Filters</span>
-          <span class="badge">Sensor Calibration</span>
-          <span class="badge">Jetson Orin</span>
+          <span class="badge">Multi Sensor Calibration and Fusion</span>
+          <span class="badge">SLAM</span>
+          <span class="badge">3D Object Detection</span>
           <span class="badge">Git</span>
           <span class="badge">Jira</span>
         </div>
